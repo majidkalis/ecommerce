@@ -1,0 +1,6 @@
+.container {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure items don't wrap to the next line */
+    justify-content: space-between; /* Distribute items evenly with space between */
+    align-items: center; /* Vertically center items */
+  }
