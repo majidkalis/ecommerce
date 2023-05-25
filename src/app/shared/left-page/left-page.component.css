@@ -58,4 +58,14 @@
     .nav {
         position: relative;
     }
-    
+    /* Change the color of the Font Awesome icons */
+.navbar-nav .nav-item .nav-link .fa {
+    color: #f81420; /* Replace with the desired color */
+  }
+  
+  /* Add some additional styling to the Font Awesome icons */
+  .navbar-nav .nav-item .nav-link .fa {
+    margin-right: 5px;
+    font-size: 18px;
+  }
+  
