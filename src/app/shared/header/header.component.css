@@ -54,7 +54,7 @@ h2 {
     border-radius: 4px;
     right: 15px;
     bottom: 15px;
-    transition: background 0.5s;
+    transition:  0.5s;
     z-index: 11;
 }
 
@@ -1386,7 +1386,6 @@ h2 {
 
 .sidebar-widget.brands ul li span {
     display: inline-block;
-    float: right;
     color: #666666;
     font-size: 14px;
     font-weight: 400;
