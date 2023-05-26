@@ -6,6 +6,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LeftPageComponent } from './left-page/left-page.component';
 import { MainBannerComponent } from './main-banner/main-banner.component';
 import { RightBannerComponent } from './right-banner/right-banner.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { BrowserModule } from '@angular/platform-browser';
+
+
 
 
 @NgModule({
@@ -13,11 +19,16 @@ import { RightBannerComponent } from './right-banner/right-banner.component';
     LandingPageComponent,
     LeftPageComponent,
     MainBannerComponent,
-    RightBannerComponent
+    RightBannerComponent,
+  
+  
   ],
   imports: [
-    CommonModule,
-    SharedRoutingModule
-  ]
+    CommonModule,CarouselModule.forRoot(),
+    SharedRoutingModule,SlickCarouselModule,[BrowserModule, NgImageSliderModule,
+  ]]
 })
+
 export class SharedModule { }
+
+

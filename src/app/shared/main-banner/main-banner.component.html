@@ -1,1 +1,11 @@
-<p>main-banner works!</p>
+<carousel>
+    <slide *ngFor="let image of images">
+      <img src="{{ image.src }}" alt="{{ image.alt }}">
+      
+      <div class="carousel-caption">
+        <h5>{{ image.title }}</h5>
+        <p>{{ image.description }}</p>
+      </div>
+    </slide>
+  </carousel>
+  

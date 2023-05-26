@@ -4,15 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-SharedModule
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NgImageSliderModule } from 'ng-image-slider';
+
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [
+  imports: [CarouselModule.forRoot()
+,
     BrowserModule,
     AppRoutingModule,
+    [BrowserModule, NgImageSliderModule],
     SharedModule,
   ],
   providers: [],
