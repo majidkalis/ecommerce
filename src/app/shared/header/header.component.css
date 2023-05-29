@@ -19,6 +19,9 @@ a:focus {
     outline: none;
     text-decoration: none;
 }
+.logos h1{
+    font: 500px;
+}
 
 h1 {
     font-family: 'Source Code Pro', monospace;

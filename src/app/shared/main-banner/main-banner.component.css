@@ -1,9 +1,12 @@
 .carousel-image {
   width: 100%; /* Adjust the width as per your requirements */
-  height: 100%; /* Adjust the height as per your requirements */
+  height: 700%; /* Adjust the height as per your requirements */
   object-fit: cover; /* Ensures the image fills the container while maintaining aspect ratio */
   border-radius: 5px; /* Adds rounded corners to the images */
   /* Add more CSS properties as needed */
+}
+.img{
+  width: 200%;
 }
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.7);
