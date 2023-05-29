@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Cloudinary } from 'cloudinary-core';
+import { HttpClient } from '@angular/common/http';
+import { ServicesSharedService } from '../services-shared.service';
+
 
 @Component({
   selector: 'app-main-banner',
@@ -6,13 +10,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-banner.component.css']
 })
 export class MainBannerComponent {
-
-  images = [
-    { src: "https://picsum.photos/200/300/?blur=2", alt: 'file image ', title: 'file image Title', description: 'file image Description' },
-    { src: 'https://picsum.photos/200/300/?blur', alt: 'Image 2', title: 'Image 2 Title', description: 'Image 2 Description' },
-    { src: 'https://picsum.photos/id/870/200/300?grayscale&blur=2', alt: 'Image 3', title: 'Image 3 Title', description: 'Image 3 Description' },
-  ];
- 
+  public cloudinary: any;
+  public index: any;
+  
+  constructor(private imageService: ServicesSharedService) {
+    // Replace 'YOUR_CLOUDINARY_CLOUD_NAME' with your actual Cloudinary cloud name
+    this.cloudinary = new Cloudinary({ cloud_name: 'YOUR_CLOUDINARY_CLOUD_NAME' });
+  }
+  uploadImage(event: any) {
+    const file = event.target.files[0];
+    this.index = 1; // Set the desired index value
+  
+    const formData = new FormData();
+    formData.append('image', file);
+    formData.append('index', this.index.toString());
+    console.log(formData)
+  
+  
+     // Replace with your actual backend API URL
+  
+    return this.imageService.imageUrl(formData).subscribe(
+      (response:any) => {
+        console.log('Image uploaded successfully',response);
+        // Handle the response from the backend
+      },
+      error => {
+        console.error('Error uploading image', error);
+        // Handle the error if needed
+      }
+    );
+  }
+  
+  
 }
 
 

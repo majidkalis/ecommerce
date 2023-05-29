@@ -3,7 +3,7 @@ body{
   padding: 0;
 }
 .container {
-  width: 1300px;
+  width: 5000px;
   height: 450px;
     display: flex;
     flex-wrap: wrap; /* Ensure items don't wrap to the next line */

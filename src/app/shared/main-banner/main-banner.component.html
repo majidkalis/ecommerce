@@ -1,11 +1,7 @@
 <carousel>
-    <slide *ngFor="let image of images">
-      <img src="{{ image.src }}" alt="{{ image.alt }}">
-      
-      <div class="carousel-caption">
-        <h5>{{ image.title }}</h5>
-        <p>{{ image.description }}</p>
-      </div>
+  <slide *ngFor="let index of [0,1,2]">
+      <input type="file" (change)="uploadImage($event)">
+
     </slide>
   </carousel>
-  
+  > 
