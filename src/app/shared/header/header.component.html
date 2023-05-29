@@ -1,4 +1,3 @@
-
 <body>
     <!-- Top bar Start -->
     <div class="top-bar">
@@ -10,7 +9,7 @@
                 </div>
                 <div class="col-sm-6">
                     <i class="fa fa-phone-alt"></i>
-                    +012-345-6789
+                    +923461777143
                 </div>
             </div>
         </div>
@@ -23,7 +22,7 @@
             <nav class="navbar navbar-expand-md bg-dark navbar-dark">
                 <a href="#" class="navbar-brand">MENU</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
@@ -43,15 +42,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="navbar-nav ml-auto">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Login</a>
-                                <a href="#" class="dropdown-item">Register</a>
-                            </div>
+                
+                    <div class="dropdown-userAccount">
+                        <button class="btn-primary" (click)="toggleButton()">User Account</button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Login</a>
+                            <a href="#" class="dropdown-item">Register</a>
                         </div>
-                    </div>
+
+                        <ul *ngIf="isDropdownOpen">
+                          <li *ngFor="let item of itemList">{{ item }}</li>
+                        </ul>
+                      </div>   
                 </div>
             </nav>
         </div>
@@ -65,15 +67,18 @@
                 <div class="col-md-3">
                     <div class="logo">
                         <a href="index.html">
+<<<<<<< HEAD
                             <h1 style="font-size: 60px; font-style: italic; border-bottom: 1px solid #000;">E-Store</h1>
                             <!-- <img src="/ecommerce/src/assets/New folder/logo.png" alt="Logo"> -->
+=======
+                        <p> EStore</p>
+>>>>>>> a7eb0236d43e4537bd080b1c915e133d0e32a881
                         </a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="search">
                         <input type="text" placeholder="Search">
-                        <button><i class="fa fa-search"></i></button>
                     </div>
                 </div>
                 <div class="col-md-3">
