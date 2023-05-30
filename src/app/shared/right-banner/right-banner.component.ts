@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+import { ServicesSharedService } from '../services-shared.service';
 @Component({
   selector: 'app-right-banner',
   templateUrl: './right-banner.component.html',
@@ -9,7 +10,10 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class RightBannerComponent {
-  constructor(private http: HttpClient) { }
+  public images: any[] = [];
+  public uploaingImages="";
+  
+    constructor(private imageService: ServicesSharedService) { }
 
   handleImageUpload(event: any, index: number) {
     const file = event.target.files[0];
@@ -21,17 +25,22 @@ export class RightBannerComponent {
   }
 
   uploadImage(formData: FormData) {
-    const url = 'your-backend-api-url'; // Replace with your actual backend API URL
+    // const url = 'your-backend-api-url'; // Replace with your actual backend API URL
 
-    this.http.post<any>(url, formData).subscribe(
-      response => {
-        console.log('Image uploaded successfully');
-        // Handle the response from the backend if needed
+    this.imageService.imageUrl(formData).subscribe(
+      (response:any) => {
+        console.log('Image uploaded successfully',response);
+        this.uploaingImages =response.url;
+        console.log(this.uploaingImages);
+        // const uploaingImages ={url:response.url,index:response};
+        this.images.push(this.uploaingImages)
+        
       },
       error => {
         console.error('Error uploading image', error);
-        // Handle the error if needed
+        
       }
+        // Handle the error if needed
     );
   }
 }

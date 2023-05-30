@@ -9,10 +9,10 @@ import { formatDate } from '@angular/common';
 })
 export class ServicesSharedService {
   public httpHeaders = new HttpHeaders().set('Content-Type','application/json')
-  public image_Url ="http://localhost3000/upload"
+  public image_Url ="http://localhost:3000/uploadimg"
 
   constructor(private http:HttpClient) { }
-  imageUrl(formDate:any){
-    return this.http.post(this.image_Url,formDate)
+  imageUrl(obj:any){
+    return this.http.post(this.image_Url,obj);
   }
 }

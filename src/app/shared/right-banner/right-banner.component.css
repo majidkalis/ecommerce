@@ -51,4 +51,13 @@
     text-align: center;
     padding: 10px;
   }
+  .image-preview {
+    width: 20px; /* Set the desired width */
+    height: 30px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+  }
+  .img-item img {
+    width: 250px;
+    height: 300px;
+  }
   
