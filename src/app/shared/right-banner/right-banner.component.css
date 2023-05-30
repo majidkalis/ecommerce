@@ -7,7 +7,7 @@
   }
   
   .img-item {
-    flex: 0 0 30% 30px; /* Adjust the width of each image item as needed */
+    flex: 0 0 30% 30px; 
     position: relative;
     margin-bottom: 20px;
     border-radius: 5px;

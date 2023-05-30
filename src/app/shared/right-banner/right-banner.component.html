@@ -1,15 +1,16 @@
 
 <div class="header-img">
     <div class="img-item">
-        <img src="https://picsum.photos/200/300?grayscale" />
-        <a class="img-text" href="">
-            <p>Some text goes here that describes the image</p>
-        </a>
+      <input type="file" (change)="handleImageUpload($event, 0)">
+      <!-- <a class="img-text" href=""> -->
+        <!-- <p>Some text goes here that describes the image</p> -->
+      <!-- </a> -->
     </div>
     <div class="img-item">
-        <img src="https://picsum.photos/200/300/?blur=2" />
-        <a class="img-text" href="">
-            <p>Some text goes here that describes the image</p>
-        </a>
+      <input type="file" (change)="handleImageUpload($event, 1)">
+      <!-- <a class="img-text" href=""> -->
+        <!-- <p>Some text goes here that describes the image</p> -->
+      <!-- </a> -->
     </div>
-</div>
+  </div>
+  

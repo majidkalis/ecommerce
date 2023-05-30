@@ -14,8 +14,8 @@ export class MainBannerComponent {
   public index: any;
   
   constructor(private imageService: ServicesSharedService) {
-    // Replace 'YOUR_CLOUDINARY_CLOUD_NAME' with your actual Cloudinary cloud name
-    this.cloudinary = new Cloudinary({ cloud_name: 'YOUR_CLOUDINARY_CLOUD_NAME' });
+  
+    this.cloudinary = new Cloudinary({ cloud_name: 'dyhqdbb3u' });
   }
   uploadImage(event: any) {
     const file = event.target.files[0];
@@ -27,16 +27,16 @@ export class MainBannerComponent {
     console.log(formData)
   
   
-     // Replace with your actual backend API URL
+    
   
-    return this.imageService.imageUrl(formData).subscribe(
+     this.imageService.imageUrl(formData).subscribe(
       (response:any) => {
         console.log('Image uploaded successfully',response);
-        // Handle the response from the backend
+        
       },
       error => {
         console.error('Error uploading image', error);
-        // Handle the error if needed
+        
       }
     );
   }
