@@ -1,12 +1,14 @@
-<div *ngFor="let index of [0,1,2]">
-   <!-- <carousel> -->
-    <!-- <slide>  -->
-      <input type="file" (change)="uploadImage($event, index)">
-      <img src="uploaingImages" alt="hello">
+<carousel> 
+  <slide>  
+       <div *ngFor="let index of [0,1,2]">
+      <input type="file" (change)="uploadImagemain($event, index)">
+      <img [src]="images[index]" alt="" class="image-preview">
+       </div>
       <!-- <img [src]="uploaingImages" alt="">
         <img [src]="uploaingImages" alt=""> -->
-       <!-- </slide> -->
-     <!-- </carousel>  -->
-</div>
+
+       </slide> 
+      </carousel> 
   <!-- > <input #fileInput type="file"/>
-  <button (click)="addFile()">Add</button> -->
+  <button (click)="addFile()">Add</button> --><div class="header-img">
+  

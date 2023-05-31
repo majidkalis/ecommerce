@@ -10,50 +10,42 @@ import { ServicesSharedService } from '../services-shared.service';
   styleUrls: ['./main-banner.component.css']
 })
 export class MainBannerComponent {
-  public cloudinary: any;
-  // public index: any;
+
   public images: any[] = [];
-  public uploaingImages="";
-  public fileImages="";
+    public uploaingImages="";
+    
+      constructor(private imageService: ServicesSharedService) { }
   
-  constructor(private imageService: ServicesSharedService) {
-  
-    this.cloudinary = new Cloudinary({ cloud_name: 'dyhqdbb3u' });
-  }
-  uploadImage(event: any, index: any) {
-    const file = event.target.files[0];
-    console.log("----------",file)
-    // const index =this.images.length+1;
-    // for (let i = 0; i < file.length; i++) {
-      // Set the desired index value
-      
+      uploadImagemain(event: any, index: number) {
+      console.log("=====index-===",index)
+      const file = event.target.files[0];
       const formData = new FormData();
       formData.append('image', file);
-      
       // formData.append('index', index.toString());
-      console.log(formData)
+      console.log("=====file-===",file)
+      console.log("=====formData-===",formData)
+      this.uploadImage(formData);
+    }
+  
+    uploadImage(formData: FormData) {
+      console.log("=-=-=-=-==",formData)
+      // const url = 'your-backend-api-url'; // Replace with your actual backend API URL
       
-      // this.images.push({ file, index });
-      let obj = {
-        formData: formData,
-        index: index
-      }
-      console.log("----obj--",obj)
-      return
-     this.imageService.imageUrl(obj).subscribe(
-      (response:any) => {
-        console.log('Image uploaded successfully',response);
-        this.uploaingImages =response.url;
-        // const uploaingImages ={url:response.url,index:response};
-        this.images.push(this.uploaingImages)
-        
-      },
-      error => {
-        console.error('Error uploading images', error);
-        
-      }
-    );
-  // }
+      this.imageService.imageUrl(formData).subscribe(
+        (response:any) => {
+          console.log('Image uploaded successfully',response);
+          this.uploaingImages =response;
+          console.log(this.uploaingImages);
+          // const uploaingImages ={url:response.url,index:response};
+          this.images.push(this.uploaingImages)
+          
+        },
+        error => {
+          console.error('Error uploading image', error);
+          
+        }
+          // Handle the error if needed
+      );
+    }
+  }
   
-  
-  }}

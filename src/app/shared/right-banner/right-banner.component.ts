@@ -33,7 +33,7 @@ export class RightBannerComponent {
     this.imageService.imageUrl(formData).subscribe(
       (response:any) => {
         console.log('Image uploaded successfully',response);
-        this.uploaingImages =response.url;
+        this.uploaingImages =response;
         console.log(this.uploaingImages);
         // const uploaingImages ={url:response.url,index:response};
         this.images.push(this.uploaingImages)
