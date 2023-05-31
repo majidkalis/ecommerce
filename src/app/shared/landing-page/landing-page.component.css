@@ -1,0 +1,13 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 5000px;
+  height: 450px;
+    display: flex;
+    flex-wrap: wrap; /* Ensure items don't wrap to the next line */
+    justify-content: space-between; /* Distribute items evenly with space between */
+    align-items: center;
+    background-color: rgb(217, 245, 245); /* Vertically center items */
+  }

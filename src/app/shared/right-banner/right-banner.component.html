@@ -1,0 +1,33 @@
+<div class="header-img">
+  <div *ngFor="let index of [0, 1]">
+    <div class="img-item">
+      <input type="file" (change)="handleImageUpload($event, index)">
+      <img [src]="images[index]" alt="" class="image-preview">
+    </div>
+  </div>
+</div>
+
+<!-- <div class="header-img">
+  <div *ngFor="let index of [0,1]">
+    <div class="img-item">
+      <input type="file" (change)="handleImageUpload($event, 0)">
+      
+      <img [src]="uploaingImages" alt="">
+    </div>
+    <div class="img-item">
+      <input type="file" (change)="handleImageUpload($event, 1)">
+      <img [src]="uploaingImages" alt="">
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <a class="img-text" href=""> 
+  <p>Some text goes here that describes the image</p> 
+</a>  -->
+  <!-- <a class="img-text" href=""> 
+         <p>Some text goes here that describes the image</p> 
+       </a>  -->
+       
+
+  
