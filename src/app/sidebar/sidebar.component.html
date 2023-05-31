@@ -1,0 +1,35 @@
+<!-- <mat-toolbar  *ngIf="isSmallScreen">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="toolbar-title">Ecommerce</span>
+</mat-toolbar> -->
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav" [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? false : true">
+        <mat-nav-list>
+            <mat-list-item routerLink="/dashboard" routerLinkActive="active">
+                <mat-icon>dashboard</mat-icon>
+                <span class="nav-text">Dashboard</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>shopping_cart</mat-icon>
+                <span class="nav-text">Products</span>
+                <button mat-icon-button [matMenuTriggerFor]="productMenu">
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
+                <mat-menu #productMenu="matMenu">
+                    <button mat-menu-item routerLink="/products" routerLinkActive="active">Listing</button>
+                    <button mat-menu-item routerLink="/products/update" routerLinkActive="active">Update</button>
+                </mat-menu>
+            </mat-list-item>
+            <mat-list-item routerLink="/logout">
+                <mat-icon>exit_to_app</mat-icon>
+                <span class="nav-text">Logout</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

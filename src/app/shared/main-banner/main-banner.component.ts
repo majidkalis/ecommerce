@@ -18,6 +18,7 @@ export class MainBannerComponent {
   
       uploadImagemain(event: any, index: number) {
       console.log("=====index-===",index)
+      
       const file = event.target.files[0];
       const formData = new FormData();
       formData.append('image', file);

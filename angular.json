@@ -25,8 +25,13 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css","node_modules/bootstrap/dist/css/bootstrap.min.css","node_modules/@fortawesome/fontawesome-free/css/all.min.css"
               
+=======
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css"
+>>>>>>> 5a99188235978d3f41a6b6c3a57d95d07233563d
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -90,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -99,6 +105,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "801236d4-7f4c-4134-a561-b2751c1e51ab"
+=======
+    "analytics": "d262bac0-30f2-4deb-b0c1-a3589dd0479f"
+>>>>>>> 5a99188235978d3f41a6b6c3a57d95d07233563d
   }
 }
