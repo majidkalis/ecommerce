@@ -16,17 +16,20 @@ export class RightBannerComponent {
     constructor(private imageService: ServicesSharedService) { }
 
   handleImageUpload(event: any, index: number) {
+    console.log("=====index-===",index)
     const file = event.target.files[0];
     const formData = new FormData();
     formData.append('image', file);
-    formData.append('index', index.toString());
-
+    // formData.append('index', index.toString());
+    console.log("=====file-===",file)
+    console.log("=====formData-===",formData)
     this.uploadImage(formData);
   }
 
   uploadImage(formData: FormData) {
+    console.log("=-=-=-=-==",formData)
     // const url = 'your-backend-api-url'; // Replace with your actual backend API URL
-
+    
     this.imageService.imageUrl(formData).subscribe(
       (response:any) => {
         console.log('Image uploaded successfully',response);

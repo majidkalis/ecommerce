@@ -22,21 +22,24 @@ export class MainBannerComponent {
   }
   uploadImage(event: any, index: any) {
     const file = event.target.files[0];
+    console.log("----------",file)
     // const index =this.images.length+1;
     // for (let i = 0; i < file.length; i++) {
-       // Set the desired index value
-  
-    const formData = new FormData();
-    formData.append('image', file);
-
-    // formData.append('index', index.toString());
-    console.log(formData)
-   
-    // this.images.push({ file, index });
-    let obj = {
-      formData: formData,
-      index: index
-    }
+      // Set the desired index value
+      
+      const formData = new FormData();
+      formData.append('image', file);
+      
+      // formData.append('index', index.toString());
+      console.log(formData)
+      
+      // this.images.push({ file, index });
+      let obj = {
+        formData: formData,
+        index: index
+      }
+      console.log("----obj--",obj)
+      return
      this.imageService.imageUrl(obj).subscribe(
       (response:any) => {
         console.log('Image uploaded successfully',response);

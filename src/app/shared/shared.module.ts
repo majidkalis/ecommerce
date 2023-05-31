@@ -30,7 +30,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,CarouselModule.forRoot(),
     SharedRoutingModule,SlickCarouselModule,[BrowserModule, NgImageSliderModule,
-  ]]
+  ],]
 })
 
 export class SharedModule { }
