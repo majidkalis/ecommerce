@@ -1,0 +1,69 @@
+<mat-card>
+  <mat-card-content class="product-list">
+    <h2>List a Product</h2>
+    
+    <div class="input-row">
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <input matInput placeholder="Enter category" [(ngModel)]="category">
+      </mat-form-field>
+    </div>
+    
+    <div class="input-row">
+      <mat-form-field>
+        <mat-label>Product Name</mat-label>
+        <input matInput placeholder="Enter product name" [(ngModel)]="productName">
+      </mat-form-field>
+    </div>
+    
+    <div class="input-row">
+      <mat-form-field>
+        <mat-label>SKU</mat-label>
+        <input matInput placeholder="Enter SKU" [(ngModel)]="sku" disabled>
+      </mat-form-field>
+    </div>
+    
+    <div class="input-row">
+      <button mat-raised-button color="primary" (click)="generateSku()">Generate SKU</button>
+    </div>
+    
+    <div class="input-row">
+      <mat-form-field>
+        <mat-label>Product Description</mat-label>
+        <textarea matInput placeholder="Enter product description" [(ngModel)]="productDescription"></textarea>
+      </mat-form-field>
+    </div>
+    
+    <div class="input-row">
+      <input type="file" (change)="onFileSelected($event)">
+    </div>
+    
+    <div class="input-row">
+      <button mat-raised-button color="primary" (click)="uploadImage()">Upload Image</button>
+    </div>
+    
+    <div class="input-row">
+      <mat-form-field>
+        <mat-label>Payment Method</mat-label>
+        <input matInput placeholder="Enter payment method" [(ngModel)]="paymentMethod">
+      </mat-form-field>
+    </div>
+      <div class="input-row">
+      <mat-form-field>
+        <mat-label>Unit Weight</mat-label>
+        <mat-select [(ngModel)]="unitWeight">
+          <mat-option value="kg">kg</mat-option>
+          <mat-option value="g">g</mat-option>
+          <mat-option value="lb">lb</mat-option>
+          <mat-option value="oz">oz</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+    <div class="input-row">
+      <button mat-raised-button color="primary" (click)="submitProduct()">Save & Draft</button>
+      <button mat-raised-button color="primary" (click)="submitProduct()">Submit</button>
+    </div>
+    
+  </mat-card-content>
+</mat-card>
